@@ -13,3 +13,5 @@
     clo?.addEventListener('click', () => {
         nav.classList.toggle('nav--visible');
     });
+
+    console.log(nav.style.position)

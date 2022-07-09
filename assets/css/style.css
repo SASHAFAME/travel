@@ -8,8 +8,8 @@ html {
 body {
     font-size: 2rem;
     font-family: 'Aleo', sans-serif;
-    overflow-x: hidden;
     position: relative;
+    overflow-x: hidden !important;
 }
 
 .body {
@@ -325,6 +325,7 @@ input::placeholder {
 .destinations {
     margin: 0 auto;
     text-align: center;
+    
 }
 
 .title-destinations {
@@ -528,19 +529,25 @@ figcaption {
 .footer {
     position: relative;
 
+    min-width: 100%;
+
 }
 
 .footer__wrapper {
     position: absolute;
+    max-width: inherit;
+    min-width: 100%;
     z-index: 1000;
     bottom:7px;
-
-    
 }
 
 .footer__container {
-    display: flex;
+    max-width: inherit;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
 }
 
 .icons__list_git_rs {
@@ -558,7 +565,6 @@ figcaption {
     font-weight: 500;
     font-size: 1.6rem;
     line-height: 21px;
-    padding-right: 27px;
 
     color: white;
 }
@@ -597,7 +603,7 @@ figcaption {
 
 
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 900px) {
 
     .wrapper {
         max-width: 360px;
@@ -709,7 +715,7 @@ figcaption {
 
     .query_window {
         max-width: 360px;
-        min-width: 280px;
+        min-width: 290px;
         height: 48px;
         margin: 0 auto;
     }
@@ -956,9 +962,9 @@ figcaption {
     }
 
     .stories-info {
-        width: 195px;
+        width: 0,541%;
         height: 120px;
-    }
+    } 
 
     .stories-picture-img {
         border-radius: 16px;
@@ -1003,7 +1009,7 @@ figcaption {
     }
 
     .paragraph-overflow {
-        overflow: scroll;
+        overflow:hidden;
     }
 
     .button_see-more_style {
@@ -1037,16 +1043,15 @@ figcaption {
     }
 
     .icons-style_git_rs {
-        width: 80px;
+        height: 30px;
     }
 
     .footer__wrapper {
-       bottom:0px;
-        left: 135px;
+        left: 35%;
     }
 
     .footer__container {
-        max-width: 390px;
+
     }
     /* FOOTER END */
 }
