@@ -2,7 +2,6 @@ html {
     font-size: 10px;
     scroll-behavior: smooth;
     box-sizing: border-box;
-    overflow-x: hidden;
 }
 
 
@@ -10,11 +9,10 @@ body {
     font-size: 2rem;
     font-family: 'Aleo', sans-serif;
     position: relative;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-.body {
-
-}
 
 /* .body:after {
     display: block;
