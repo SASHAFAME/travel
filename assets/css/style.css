@@ -528,9 +528,6 @@ figcaption {
 
 .footer {
     position: relative;
-
-    min-width: 100%;
-
 }
 
 .footer__wrapper {
@@ -547,7 +544,7 @@ figcaption {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
 }
 
 .icons__list_git_rs {
@@ -733,6 +730,7 @@ figcaption {
         font-size: 1.4rem;
         font-family: 'Aleo', Verdana, sans-serif;
         font-style: italic;
+        padding-right: 20px;
     }
 
     input::placeholder {
@@ -1052,6 +1050,7 @@ figcaption {
     }
 
     .footer__wrapper {
+        min-width: 0;
         left: 35%;
     }
 
