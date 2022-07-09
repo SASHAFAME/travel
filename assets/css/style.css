@@ -2,6 +2,7 @@ html {
     font-size: 10px;
     scroll-behavior: smooth;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 
@@ -9,10 +10,13 @@ body {
     font-size: 2rem;
     font-family: 'Aleo', sans-serif;
     position: relative;
-    overflow-x: hidden !important;
 }
 
 .body {
+
+}
+
+/* .body:after {
     display: block;
     content: '';
     position: fixed;
@@ -24,7 +28,7 @@ body {
     background: rgba(0,0,0,.5);
     z-index: 2000;
     cursor: pointer;
-  }
+  } */
 
 *, *::before, *::after {
     margin: 0;
@@ -325,7 +329,7 @@ input::placeholder {
 .destinations {
     margin: 0 auto;
     text-align: center;
-    
+    overflow-x: hidden;
 }
 
 .title-destinations {
@@ -721,7 +725,7 @@ figcaption {
     }
 
     .query-text {
-        margin: 16px 10px 20px;
+        margin: 16px 20px 20px;
     }
 
     .label_query_window_style {
