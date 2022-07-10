@@ -1,17 +1,32 @@
 
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav')
-    const navBg = document.querySelector('body')
+    const bodyWrapper = document.querySelector('.body-wrapper')
     const clo = document.querySelector('.header__nav-close');
+
+    const navBG = document.querySelector('.nav-bg')
+
+    const navItem = document.querySelector('.nav-items')
+
+
+    function navMenu() {
+        nav.classList.toggle('nav--visible');
+        bodyWrapper.classList.toggle('nav-bg');
+    }
+
+    navBG?.addEventListener('click', () => {
+        navMenu();
+    });
 
 
     burger?.addEventListener('click', () => {
-        nav.classList.toggle('nav--visible');
-        
+        navMenu();
     });
 
     clo?.addEventListener('click', () => {
-        nav.classList.toggle('nav--visible');
+        navMenu();
     });
 
-    console.log(nav.style.position)
+    navItem?.addEventListener('click', () => {
+        navMenu();
+    })

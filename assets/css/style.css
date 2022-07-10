@@ -11,20 +11,16 @@ body {
     position: relative;
 }
 
-
-/* .body:after {
-    display: block;
+  .nav-bg:after {
     content: '';
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-
-    background: rgba(0,0,0,.5);
+    background: rgba(0,0,0, 0.5);
     z-index: 2000;
-    cursor: pointer;
-  } */
+  }
 
 *, *::before, *::after {
     margin: 0;
@@ -145,10 +141,12 @@ button:hover {
 
 /* BURGER BEGIN */
 
+.burger {
 
+}
 
 .header__burger {
-    position: absolute;
+    position: relative;
 
     display: none;
     width: 26.25px;
@@ -612,7 +610,7 @@ figcaption {
     }
 
     .header__wrapper {
-
+        max-width: 100%;
         margin-top: 25px;
     }
 
@@ -653,7 +651,7 @@ figcaption {
     .header__burger {
         display: block;
         margin: 14px 8px 14px 8px;
-        right: 20px;
+
     }
 
     .burger__line {
