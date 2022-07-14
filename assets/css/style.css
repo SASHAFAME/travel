@@ -44,7 +44,8 @@ h2 {
 }
 
 .wrapper {
-    max-width: 1200px;
+    max-width: 1240px;
+    padding: 0 20px;
     margin: 0 auto;
 }
 
@@ -60,6 +61,7 @@ h2 {
     display: flex;
     gap: 42px;
     margin-right: 35px;
+    flex-wrap: wrap;
 }
 
 
@@ -431,26 +433,27 @@ figcaption {
 
 /* Stories */
 
-.stories {
-    background-image: url(../image/travelstoriesbg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 1330px;
+.stories-content {
+    position: relative;
+    padding-bottom: 41px;
+    padding-top: 40px;
+    background: rgba(255, 255, 255, 0.7);
 }
 
-
-
-.stories-background-color {
-    background-color: rgba(255, 255, 255, 0.7);
-    background-size: cover;
-
-    min-width: 100%;
+.stories-bg {
     position: absolute;
-    margin-bottom: 68px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 105.5%;
 }
 
 .stories-item {
     display: flex;
+    justify-content: space-between;
     margin-bottom: 23px;
 }
 
@@ -525,25 +528,19 @@ figcaption {
 
 /* End Stories */
 
-.footer {
-    position: relative;
-}
+
 
 .footer__wrapper {
-    position: absolute;
-    max-width: inherit;
     min-width: 100%;
     z-index: 1000;
-    bottom:7px;
+
 }
 
 .footer__container {
-    max-width: inherit;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    margin-top: 20px;
 }
 
 .icons__list_git_rs {
@@ -1035,6 +1032,14 @@ figcaption {
         background-position: 12px center;
     }
     
+    .stories-content {
+        padding-bottom: 13px;
+        padding-top: 10px;
+    }
+    
+    .stories-bg{
+        height: 110.5%;
+      }
 
     /* STORIES END */
 
@@ -1059,7 +1064,8 @@ figcaption {
     }
 
     .footer__container {
-
+        display: flex;
+        justify-content: center;
     }
     /* FOOTER END */
 }

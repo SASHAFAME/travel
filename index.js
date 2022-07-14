@@ -16,18 +16,10 @@
         bg.classList.remove('active');
     }
 
-    burger?.addEventListener('click', () => {
-        openMenu();
-    });
+    burger?.addEventListener('click', openMenu);
 
-    clo?.addEventListener('click', () => {
-        openMenu();
-    });
+    clo?.addEventListener('click', openMenu);
 
-    navItem?.addEventListener('click', () => {
-        closeMenu();
-    })
+    navItem?.addEventListener('click', closeMenu);
 
-    bg?.addEventListener('click', () => {
-        closeMenu();
-    })
+    bg?.addEventListener('click', closeMenu);
