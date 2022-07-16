@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0" >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,700&family=Red+Hat+Text:wght@500&display=swap&family=Magra:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,700&family=Red+Hat+Text:wght@400;500&display=swap&family=Magra:wght@700&display=swap" rel="stylesheet">
     <!-- FAVICON -->
     <link rel="icon" sizes="16x16" href="assets/image/favicon.ico">
     <link rel="manifest" href="assets/image/site.webmanifest">
@@ -19,7 +19,7 @@
 </head>
 <body>
 
-<header class="header">
+<header class="header" id="header">
         <div class="wrapper">
             <div class="header__wrapper">
                 <div class="logo logo__style">
@@ -28,12 +28,12 @@
                 </div>
                 <nav class="nav" id="nav">
                     <ul class="nav-items">
-                        <li class="li-style"><a class="nav__link" href="#preview">How It Works</a></li>
-                        <li class="li-style"><a class="nav__link" href="#steps">Plan Your Trip</a></li>
-                        <li class="li-style"><a class="nav__link" href="#destinations">Destinations</a></li>
-                        <li class="li-style"><a class="nav__link" href="#stories">Travel Stories</a></li>
-                        <li class="li-style-burger"><a class="nav__link" href="#account">Account</a></li>
-                        <li class="li-style-burger"><a class="nav__link" href="#social">Social Media</a></li>
+                        <li class="li-style"><a class="nav__link" class="nav__close" href="#preview">How It Works</a></li>
+                        <li class="li-style"><a class="nav__link" class="nav__close" href="#steps">Plan Your Trip</a></li>
+                        <li class="li-style"><a class="nav__link" class="nav__close" href="#destinations">Destinations</a></li>
+                        <li class="li-style"><a class="nav__link" class="nav__close" href="#stories">Travel Stories</a></li>
+                        <li class="li-style-burger"><a class="nav__link" href="#popup" id="popupLink">Account</a></li>
+                        <li class="li-style-burger"><a class="nav__link" class="nav__close" href="#social">Social Media</a></li>
                     </ul>
                     <div class="header__nav-close">
                     </div>
@@ -41,7 +41,7 @@
                 </nav>
                 <div class="menu-background"></div>
                 <div class="header_button">
-                    <button class="button button_size_login">Login</button>
+                    <button class="button button_login">Login</button>
                 </div>
                 <div class="header__burger burger" aria-expanded="false">
                     <span class="burger__line burger__line_first"></span>
@@ -55,8 +55,27 @@
 
 
 <main>
-    <section class="intro">
-        <div class="wrapper intro__shadow">
+    <div class="popup" id="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <div class="popup__title">Log in to your account</div>
+                <button class="button__fb popup__elements_form"><span class="fb-icon"><img src="assets/image/fb.svg" alt="fb"></span>Sign In with Facebook</button>
+                <button class="button__google popup__elements_form"> <span class="google-icon"><img src="assets/image/google.svg" alt="google"></span> Sign In with Google</button>
+                <div class="popup_separator">or</div>
+                <div class="email__container"> <p class="input__name">E-mail</p>
+                <input type="text" class="e-mail input-style popup__elements_form" ></div>
+                <div class="password__container"> <p class="input__name">Password</p>
+                <input type="text" class="pass input-style popup__elements_form" ></div>
+                <button class="signin popup__elements_form">Sign In</button>
+                <div class="forgot_pass"><a href="#" class="forgot_pass">Forgot Your Password?</a></div>
+                <div class="popup_separator_2"></div>
+                <a class="haveacc" href="#">Don`t have an account? <span class="reg"> Register</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="intro">
+        <div class="intro__shadow"></div>
+        <div class="wrapper">
             <div class="intro__inner">
                 <div class="title">
                     <h1 class="intro__title">Explore the beauty of<br>the World</h1>
@@ -69,12 +88,12 @@
                         </form>
                     </div>
                     <div class="button-query-window-pos">
-                        <button class="button button_query_window_size">Start&nbsp;Planning</button>
+                        <button class="button button_query_window_size">Start Planning</button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     <section class="steps" id="steps">
         <div class="wrapper">
             <h2 class="section-title-style">3 steps to the perfect trip</h2>
@@ -101,41 +120,41 @@
             
     </section>
     <section class="destinations" id="destinations">
-        <div class="wrapper">
+
             <div>
                 <h2 class="title-destinations">Popular Destinations</h2>
             </div>
             <div class="slider">
-                <figure class="figure1 figure-destination-block-pad">
+                <input type="radio" name="r" id="r1" />
+                <input type="radio" name="r" id="r2" checked />
+                <input type="radio" name="r" id="r3" />
+
+                <label for="r1" class="figure1 figure figure-destination-block-pad slide s1">
                     <img src="assets/image/Destination_1.jpg" alt="Spain" class="figure-destination-block">
-                    <figcaption class="caption-style">Spain</figcaption>
-                </figure>
-                <figure class="figure2 figure-destination-block-pad">
+                    <div class="caption-style figcaption">Spain</div>
+                </label>
+                <label for="r2" class="figure2 figure figure-destination-block-pad slide">
                     <img src="assets/image/Destination_2.jpg" alt="Japan" class="figure-destination-block">
-                    <figcaption class="caption-style">Japan</figcaption>
-                </figure>
-                <figure class="figure3 figure-destination-block">
+                    <div class="caption-style figcaption">Japan</div>
+                </label>
+                <label for="r3" class="figure3 figure figure-destination-block slide">
                     <img src="assets/image/Destination_3.jpg" alt="Usa" class="figure-destination-block">
-                    <figcaption class="caption-style">Usa</figcaption>
-                </figure>
+                    <div class="caption-style figcaption">Usa</div>
+                </label>
             <div class="control-circles">
-                <div class="d1">
+                <label for="r1" class="d1 bar">
                     <!-- circle 1 -->
-                </div>
-                <div class="d2">
+                </label>
+                <label for="r2" class="d2 bar">
                     <!-- circle 2 -->
-                </div>
-                <div class="d3">
+                </label>
+                <label for="r3" class="d3 bar">
                     <!-- circle 3 -->
-                </div>
+                </label>
             </div>
             <div class="control-arrows">
-                <div class="arrow-left">
-                    <!-- arrow left -->
-                </div>
-                <div class="div arrow-right">
-                    <!-- arrow right -->
-                </div>
+                <label for="r1"><div class="arrow-left"></div></label>
+                <label for="r3"><div class="div arrow-right"></div></label>
             </div>
             </div>
 
