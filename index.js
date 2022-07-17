@@ -50,3 +50,110 @@
     popupLink?.addEventListener('click', switchPopup);
     bg?.addEventListener('click', popupClose);
     
+
+
+    // SLIDER BEGIN
+
+    let offset = 0;
+const sliderLine = document.querySelector('.slider-line');
+const sliderNext = document.querySelector('.slider-next')
+const sliderPrev = document.querySelector('.slider-prev')
+
+const s1 = document.querySelector('#s1')
+const s2 = document.querySelector('#s2')
+const s3 = document.querySelector('#s3')
+const d1 = document.querySelector('.d1')
+const d2 = document.querySelector('.d2')
+const d3 = document.querySelector('.d3')
+
+sliderNext.addEventListener('click', function() {
+    offset = offset + 860;
+    if (offset > 1720) {
+        offset = 0;
+    }
+    sliderLine.style.left = -offset + 'px';
+})
+
+sliderPrev.addEventListener('click', function() {
+    offset = offset - 860;
+    if (offset < 0 ) {
+        offset = 1720;
+    }
+    sliderLine.style.left = -offset + 'px';
+})
+
+s1.addEventListener('click', function() {
+    offset = 0
+    sliderLine.style.left = -offset + 'px';
+    d1.classList.add('active')
+    d2.classList.remove('active')
+    d3.classList.remove('active')
+})
+
+s2.addEventListener('click', function() {
+    offset = 860
+    sliderLine.style.left = -offset + 'px';
+    d1.classList.remove('active')
+    d2.classList.add('active')
+    d3.classList.remove('active')
+})
+
+s3.addEventListener('click', function() {
+    offset = 1720
+    sliderLine.style.left = -offset + 'px';
+    d1.classList.remove('active')
+    d2.classList.remove('active')
+    d3.classList.add('active')
+})
+
+d1.addEventListener('click', function() {
+    offset = 0
+    sliderLine.style.left = -offset + 'px';
+    d1.classList.add('active')
+    d2.classList.remove('active')
+    d3.classList.remove('active')
+})
+
+d2.addEventListener('click', function() {
+    offset = 860
+    sliderLine.style.left = -offset + 'px';
+    d1.classList.remove('active')
+    d2.classList.add('active')
+    d3.classList.remove('active')
+})
+
+d3.addEventListener('click', function() {
+    offset = 1720
+    sliderLine.style.left = -offset + 'px';
+    d1.classList.remove('active')
+    d2.classList.remove('active')
+    d3.classList.add('active')
+})
+
+// SLIDER END
+
+// MEDIA START
+
+if(matchMedia){
+    let screen = window.matchMedia("(max-width:390px)");
+    screen.addListener(changes);
+    changes(screen);
+}
+function changes() {
+    sliderNext.addEventListener('click', function() {
+        offset = offset + 360;
+        if (offset > 720) {
+            offset = 0;
+        }
+        sliderLine.style.left = -offset + 'px';
+    })
+    
+    sliderPrev.addEventListener('click', function() {
+        offset = offset - 360;
+        if (offset < 0 ) {
+            offset = 720;
+        }
+        sliderLine.style.left = -offset + 'px';
+    })
+}
+
