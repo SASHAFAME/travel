@@ -1,14 +1,19 @@
 
     const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav')
+    const nav = document.querySelector('.nav');
     const clo = document.querySelector('.header__nav-close');
     const navItem = document.querySelector('nav__close')
     const bg = document.querySelector('.menu-background');
     const body = document.querySelector('body');
     const lockPadding = document.querySelector('.lock-padding');
     const popup = document.querySelector('.popup');
-    const popupLink = document.querySelector('#popupLink')
+    const popupLink = document.getElementById('popupLink');
     const buttonLogin = document.querySelector('.button_login');
+
+    const slides = document.querySelectorAll('.slide');
+
+
+
 
 
     function openMenu() {
@@ -66,21 +71,6 @@ const d1 = document.querySelector('.d1')
 const d2 = document.querySelector('.d2')
 const d3 = document.querySelector('.d3')
 
-sliderNext.addEventListener('click', function() {
-    offset = offset + 860;
-    if (offset > 1720) {
-        offset = 0;
-    }
-    sliderLine.style.left = -offset + 'px';
-})
-
-sliderPrev.addEventListener('click', function() {
-    offset = offset - 860;
-    if (offset < 0 ) {
-        offset = 1720;
-    }
-    sliderLine.style.left = -offset + 'px';
-})
 
 s1.addEventListener('click', function() {
     offset = 0
@@ -134,26 +124,25 @@ d3.addEventListener('click', function() {
 
 // MEDIA START
 
-if(matchMedia){
-    let screen = window.matchMedia("(max-width:390px)");
-    screen.addListener(changes);
-    changes(screen);
-}
-function changes() {
+const sliderLineMobile = document.querySelector('.slider-line-mobile');
+
+
+
     sliderNext.addEventListener('click', function() {
         offset = offset + 360;
         if (offset > 720) {
-            offset = 0;
+            offset = 720;
         }
-        sliderLine.style.left = -offset + 'px';
+        sliderLineMobile.style.left = -offset + 'px';
+
     })
     
     sliderPrev.addEventListener('click', function() {
         offset = offset - 360;
         if (offset < 0 ) {
-            offset = 720;
+            offset = 0;
         }
-        sliderLine.style.left = -offset + 'px';
+        sliderLineMobile.style.left = -offset + 'px';
+
     })
-}
 
