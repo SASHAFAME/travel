@@ -1,20 +1,29 @@
-
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav');
     const clo = document.querySelector('.header__nav-close');
-    const navItem = document.querySelector('nav__close')
+    const navClose = document.querySelectorAll('.nav__link');
     const bg = document.querySelector('.menu-background');
     const body = document.querySelector('body');
     const lockPadding = document.querySelector('.lock-padding');
     const popup = document.querySelector('.popup');
-    const popupLink = document.getElementById('popupLink');
+    const popupLink = document.getElementById('popup-link');
     const buttonLogin = document.querySelector('.button_login');
 
     const slides = document.querySelectorAll('.slide');
 
+    const haveAcc = document.querySelectorAll('.haveacc')
+    const popupContent = document.querySelector('.popup__content')
+    const registerContent = document.querySelector('.register_content')
+    const signIn = document.querySelector('.signin');
 
 
 
+
+    signIn.addEventListener('click', function() {
+    let valueLogin = document.getElementsByTagName("input")[0].value
+    let valuePass = document.getElementsByTagName("input")[1].value
+    alert('Ваш логин: ' + valueLogin + ', ' + 'ваш пароль: ' + valuePass);
+        });
 
     function openMenu() {
         nav.classList.toggle('nav--visible');
@@ -34,7 +43,11 @@
 
     clo?.addEventListener('click', openMenu);
 
-    navItem?.addEventListener('click', closeMenu);
+    navClose[0]?.addEventListener('click', closeMenu);
+    navClose[1]?.addEventListener('click', closeMenu);
+    navClose[2]?.addEventListener('click', closeMenu);
+    navClose[3]?.addEventListener('click', closeMenu);
+    navClose[5]?.addEventListener('click', closeMenu);
 
     bg?.addEventListener('click', closeMenu);
 
@@ -45,16 +58,24 @@
         popup.classList.add('active');
         bg.classList.add('active');
     }
-
     function popupClose() {
         popup.classList.remove('active');
         bg.classList.remove('active');
     }
-
     popupLink?.addEventListener('click', popupOpen);
     popupLink?.addEventListener('click', switchPopup);
+
     bg?.addEventListener('click', popupClose);
-    
+
+
+
+    function regLogin() {
+        popupContent.classList.toggle('inactive')
+        registerContent.classList.toggle('active')
+    }
+
+        haveAcc[0].addEventListener('click', regLogin);
+        haveAcc[1].addEventListener('click', regLogin);
 
 
     // SLIDER BEGIN
