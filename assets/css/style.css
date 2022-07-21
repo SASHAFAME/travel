@@ -481,18 +481,13 @@ h2 {
     color: #F2785C;
     font-size: 2.4rem;
     font-family: 'Aleo', Verdana, sans-serif;
-    font-style: italic;
-    font-weight: 400;
-    line-height: 29px;
+    font-weight: 400 !important;
+    transform:skew(-15deg);
 }
 
 input::placeholder {
     color: #F2785C;
-    font-size: 2.4rem;
-    font-family: 'Aleo', Verdana, sans-serif;
-    font-style: italic;
-    font-weight: 400;
-    text-decoration: none;
+    font-weight: 400 !important;
 }
 
 .button_query_window_size {
@@ -635,11 +630,13 @@ input::placeholder {
     display: none;
   }
   
-  
+  .control-circles-mobile {
+    display: none;
+  }
+
   .control-circles {
     display: flex;
     justify-content: center;
-
   }
   
   .bar {
@@ -1233,14 +1230,15 @@ input::placeholder {
     .label_query_window_style {
         font-size: 1.4rem;
         font-family: 'Aleo', Verdana, sans-serif;
-        font-style: italic;
+        font-style: none;
     }
 
     input::placeholder {
-        color: #F2785C;
+
         font-size: 1.4rem;
         font-family: 'Aleo', Verdana, sans-serif;
-        font-style: italic;
+        font-weight: 400 !important;
+        font-style: none;
     }
         
     .button_query_window_size {
@@ -1445,6 +1443,11 @@ input::placeholder {
 }
 
 .control-circles {
+    display: none;
+}
+
+.control-circles-mobile {
+    display: flex;
     position: absolute;
 
     top: 190px;

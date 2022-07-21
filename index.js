@@ -18,7 +18,6 @@
 
 
 
-
     signIn.addEventListener('click', function() {
     let valueLogin = document.getElementsByTagName("input")[0].value
     let valuePass = document.getElementsByTagName("input")[1].value
@@ -96,7 +95,7 @@ const d3 = document.querySelector('.d3')
 s1.addEventListener('click', function() {
     offset = 0
     sliderLine.style.left = -offset + 'px';
-    d1.classList.add('active')
+    d1.classList.add('active');
     d2.classList.remove('active')
     d3.classList.remove('active')
 })
@@ -120,25 +119,19 @@ s3.addEventListener('click', function() {
 d1.addEventListener('click', function() {
     offset = 0
     sliderLine.style.left = -offset + 'px';
-    d1.classList.add('active')
-    d2.classList.remove('active')
-    d3.classList.remove('active')
+    d1Active()
 })
 
 d2.addEventListener('click', function() {
     offset = 860
     sliderLine.style.left = -offset + 'px';
-    d1.classList.remove('active')
-    d2.classList.add('active')
-    d3.classList.remove('active')
+    d2Active()
 })
 
 d3.addEventListener('click', function() {
     offset = 1720
     sliderLine.style.left = -offset + 'px';
-    d1.classList.remove('active')
-    d2.classList.remove('active')
-    d3.classList.add('active')
+    d3Active()
 })
 
 // SLIDER END
@@ -146,16 +139,43 @@ d3.addEventListener('click', function() {
 // MEDIA START
 
 const sliderLineMobile = document.querySelector('.slider-line-mobile');
+const sliderElement = document.querySelector('.slider-line-mobile');
+const button = document. querySelector('button')
+
+function d1Active() {
+    d1.classList.add('active')
+    d2.classList.remove('active')
+    d3.classList.remove('active')
+}
+
+function d2Active() {
+    d1.classList.remove('active')
+    d2.classList.add('active')
+    d3.classList.remove('active')
+}
+
+function d3Active() {
+    d1.classList.remove('active')
+    d2.classList.remove('active')
+    d3.classList.add('active')
+}
 
 
 
-    sliderNext.addEventListener('click', function() {
+
+    let timeoutID;
+
+        sliderNext.addEventListener('click', function() {
         offset = offset + 360;
         if (offset > 720) {
             offset = 720;
         }
         sliderLineMobile.style.left = -offset + 'px';
+        
+        timeoutID = window.setTimeout(dActivatorMobile, 550);
 
+        sliderNext.disabled = true;
+        setTimeout(function() { sliderNext.disabled = false }, 650);
     })
     
     sliderPrev.addEventListener('click', function() {
@@ -165,5 +185,71 @@ const sliderLineMobile = document.querySelector('.slider-line-mobile');
         }
         sliderLineMobile.style.left = -offset + 'px';
 
+        timeoutID = window.setTimeout(dActivatorMobile, 550);
+
+        sliderPrev.disabled = true;
+        setTimeout(function() { sliderPrev.disabled = false }, 650);
     })
 
+    function d1ActiveMobile() {
+        d1Mobile.classList.add('active')
+        d2Mobile.classList.remove('active')
+        d3Mobile.classList.remove('active')
+    }
+    
+    function d2ActiveMobile() {
+        d1Mobile.classList.remove('active')
+        d2Mobile.classList.add('active')
+        d3Mobile.classList.remove('active')
+    }
+    
+    function d3ActiveMobile() {
+        d1Mobile.classList.remove('active')
+        d2Mobile.classList.remove('active')
+        d3Mobile.classList.add('active')
+    }
+
+    function dActivatorMobile() {
+        const sliderPos = window.getComputedStyle(sliderElement).left;
+        console.log(sliderPos)
+        if(sliderPos == '-360px') {
+            d2ActiveMobile()
+        }
+        if(sliderPos == '-720px') {
+            d3ActiveMobile()
+        }
+        if(sliderPos == '0px') {
+            d1ActiveMobile()
+        }
+    }
+
+    const d1Mobile = document.querySelector('.d1-mobile')
+    const d2Mobile = document.querySelector('.d2-mobile')
+    const d3Mobile = document.querySelector('.d3-mobile')
+
+    d1Mobile.addEventListener('click', function() {
+        offset = 0
+        sliderLineMobile.style.left = -offset + 'px';
+        d1ActiveMobile()
+
+        const sliderPos = window.getComputedStyle(sliderElement).left;
+        console.log(sliderPos)
+    })
+    
+    d2Mobile.addEventListener('click', function() {
+        offset = -360
+        sliderLineMobile.style.left = offset + 'px';
+        d2ActiveMobile()
+
+        const sliderPos = window.getComputedStyle(sliderElement).left;
+        console.log(sliderPos)
+    })
+    
+    d3Mobile.addEventListener('click', function() {
+        offset = -720
+        sliderLineMobile.style.left = offset + 'px';
+        d3ActiveMobile()
+
+        const sliderPos = window.getComputedStyle(sliderElement).left;
+        console.log(sliderPos)
+    })
