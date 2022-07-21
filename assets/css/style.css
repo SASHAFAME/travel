@@ -122,7 +122,7 @@ h2 {
     cursor: pointer;
 }
 
-button:hover {
+.button:hover {
     background: #06363f;
     transition: 0.4s;
 }
@@ -213,7 +213,6 @@ button:hover {
 
 .popup__body {
     min-width: 45.14vw;
-    /* min-height: 660px; */
     margin: 0 auto;
 }
 
@@ -461,7 +460,6 @@ button:hover {
     height: 95px;
 }
 
-
 .intro__inner {
     font-family: 'Aleo', sans-serif;
 }
@@ -474,7 +472,6 @@ button:hover {
     font-weight: 700;
     margin-bottom: 46px;
 }
-
 
 .label_query_window_style {
     border: none;
@@ -489,15 +486,14 @@ button:hover {
     line-height: 29px;
 }
 
-
 input::placeholder {
     color: #F2785C;
     font-size: 2.4rem;
     font-family: 'Aleo', Verdana, sans-serif;
     font-style: italic;
+    font-weight: 400;
+    text-decoration: none;
 }
-
-
 
 .button_query_window_size {
     padding: 14px 35px;
@@ -1377,46 +1373,68 @@ input::placeholder {
     width: 1080px;
     display: inline-flex;
     position: relative;
-    left: 0px;
+    left: -360px;
   
     transition: all ease .5s;
   }
 
   .slider-prev, .slider-next {
     display: block;
+
+    background: transparent;
+    border: none;
+    
   }
 
   .control-arrows {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    bottom: 65%;
   }
 
   .arrow-left, .arrow-right {
     content: '';
-    position: absolute;
+
     border-color: #F2785C;
     opacity: 1;
-    bottom: 119px;
 }
 
 .arrow-left {
     transform: translateY(-50%) rotate(-45deg);
-
-    left: 7%;
+    position: absolute;
+    top: 15px;
+    left: 15px;
 
     border-width: 4px 0px 0px 4px;
     border-style: solid;
     padding: 6px;
 }
 
-.arrow-right {
-    transform: translateY(-50%) rotate(135deg);
+.arrow-left_container {
+    width: 30px;
+    height: 30px;
+}
 
-    right: 7%;
+.arrow-right {
+    position: absolute;
+    transform: translateY(-50%) rotate(135deg);
+    top: 15px;
+
 
     border-width: 4px 0px 0px 4px;
     border-style: solid;
 
     padding: 6px;
+}
+
+.arrow-right_container {
+
+    width: 30px;
+    height: 30px;
+
 }
 
 .arrow-left.active, .arrow-right.active {
