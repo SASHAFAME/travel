@@ -167,7 +167,7 @@ function d3Active() {
 
         sliderNext.addEventListener('click', function() {
         offset = offset + 360;
-        if (offset > 720) {
+        if (offset > 720 || offset < 0 ) {
             offset = 720;
         }
         sliderLineMobile.style.left = -offset + 'px';
@@ -180,7 +180,7 @@ function d3Active() {
     
     sliderPrev.addEventListener('click', function() {
         offset = offset - 360;
-        if (offset < 0 ) {
+        if (offset < 0 || offset > 720 ) {
             offset = 0;
         }
         sliderLineMobile.style.left = -offset + 'px';
