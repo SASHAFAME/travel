@@ -1,3 +1,1 @@
-# travelcopy
-
-https://sashafame.github.io/my-rep/
+https://sashafame.github.io/travel/
