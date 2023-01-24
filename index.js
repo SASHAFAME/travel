@@ -21,7 +21,7 @@
     signIn.addEventListener('click', function() {
     let valueLogin = document.getElementsByTagName("input")[0].value
     let valuePass = document.getElementsByTagName("input")[1].value
-    alert('Ваш логин: ' + valueLogin + ', ' + 'ваш пароль: ' + valuePass);
+    alert('Логин: ' + valueLogin + ', ' + 'Пароль: ' + valuePass);
         });
 
     function openMenu() {
@@ -79,7 +79,7 @@
 
     // SLIDER BEGIN
 
-    let offset = 0;
+let offset = 0;
 const sliderLine = document.querySelector('.slider-line');
 const sliderNext = document.querySelector('.slider-next')
 const sliderPrev = document.querySelector('.slider-prev')
@@ -94,7 +94,7 @@ const d3 = document.querySelector('.d3')
 
 s1.addEventListener('click', function() {
     offset = 0
-    sliderLine.style.left = -offset + 'px';
+    sliderLine.style.transform = 'translate(' + -offset + 'px)';
     d1.classList.add('active');
     d2.classList.remove('active')
     d3.classList.remove('active')
@@ -102,7 +102,7 @@ s1.addEventListener('click', function() {
 
 s2.addEventListener('click', function() {
     offset = 860
-    sliderLine.style.left = -offset + 'px';
+    sliderLine.style.transform = 'translate(' + -offset + 'px)';
     d1.classList.remove('active')
     d2.classList.add('active')
     d3.classList.remove('active')
@@ -110,7 +110,7 @@ s2.addEventListener('click', function() {
 
 s3.addEventListener('click', function() {
     offset = 1720
-    sliderLine.style.left = -offset + 'px';
+    sliderLine.style.transform = 'translate(' + -offset + 'px)';
     d1.classList.remove('active')
     d2.classList.remove('active')
     d3.classList.add('active')
@@ -118,19 +118,19 @@ s3.addEventListener('click', function() {
 
 d1.addEventListener('click', function() {
     offset = 0
-    sliderLine.style.left = -offset + 'px';
+    sliderLine.style.transform = 'translate(' + -offset + 'px)';
     d1Active()
 })
 
 d2.addEventListener('click', function() {
     offset = 860
-    sliderLine.style.left = -offset + 'px';
+    sliderLine.style.transform = 'translate(' + -offset + 'px)';
     d2Active()
 })
 
 d3.addEventListener('click', function() {
     offset = 1720
-    sliderLine.style.left = -offset + 'px';
+    sliderLine.style.transform = 'translate(' + -offset + 'px)';
     d3Active()
 })
 
@@ -183,7 +183,7 @@ function d3Active() {
         if (offset < 0 || offset > 720 ) {
             offset = 0;
         }
-        sliderLineMobile.style.left = -offset + 'px';
+        sliderLineMobile.style.transform = 'translate(' + -offset + 'px)';
 
         timeoutID = window.setTimeout(dActivatorMobile, 550);
 
@@ -229,7 +229,7 @@ function d3Active() {
 
     d1Mobile.addEventListener('click', function() {
         offset = 0
-        sliderLineMobile.style.left = -offset + 'px';
+        sliderLineMobile.style.transform = 'translate(' + -offset + 'px)';
         d1ActiveMobile()
 
         const sliderPos = window.getComputedStyle(sliderElement).left;
@@ -238,7 +238,7 @@ function d3Active() {
     
     d2Mobile.addEventListener('click', function() {
         offset = -360
-        sliderLineMobile.style.left = offset + 'px';
+        sliderLineMobile.style.transform = 'translate(' + offset + 'px)';
         d2ActiveMobile()
 
         const sliderPos = window.getComputedStyle(sliderElement).left;
@@ -247,7 +247,7 @@ function d3Active() {
     
     d3Mobile.addEventListener('click', function() {
         offset = -720
-        sliderLineMobile.style.left = offset + 'px';
+        sliderLineMobile.style.transform = 'translate(' + offset + 'px)';
         d3ActiveMobile()
 
         const sliderPos = window.getComputedStyle(sliderElement).left;
