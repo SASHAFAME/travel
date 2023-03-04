@@ -1,1 +1,1 @@
-https://sashafame.github.io/travel/
+https://fedormalinin.github.io/travel/
